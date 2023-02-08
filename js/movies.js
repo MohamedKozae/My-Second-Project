@@ -1,7 +1,6 @@
 // Get The API And Handle It 
 const displayData = document.getElementById("displayData");
 let imageSrc = "https://image.tmdb.org/t/p/w500/";
-
 const request = fetch("https://api.themoviedb.org/3/trending/all/day?api_key=7d8600841d0744c2900bb53e135fa788").then(function(res){
     return res.json();
 }).then(function(data){
@@ -52,12 +51,8 @@ function scrollToSections(elements){
             e.preventDefault();
             if(e.target.dataset.section ===".movies"){
                 location.replace("/movies.html");
-            }else if(e.target.dataset.section ===".header"){
-                location.replace("/home.html");
             }else{
-            document.querySelector(e.target.dataset.section).scrollIntoView({
-                behavior: 'smooth'
-            });
+                location.replace("/home.html");
             }
         });
     });

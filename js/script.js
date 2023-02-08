@@ -1,23 +1,3 @@
-// Get The API And Handle It 
-const displayData = document.getElementById("displayData");
-let imageSrc = "https://image.tmdb.org/t/p/w500/";
-
-const request = fetch("https://api.themoviedb.org/3/trending/all/day?api_key=7d8600841d0744c2900bb53e135fa788").then(function(res){
-    return res.json();
-}).then(function(data){
-    let item = "";
-    for(let i=0 ; i < data.results.length ; i++ ){
-        item += `<div class="item col-lg-3 col-sm-6 my-4">
-                <img src="${imageSrc}${data.results[i].poster_path}" alt="">
-                <span>${data.results[i].vote_average}</span>
-                </div>
-            `;
-    }
-    displayData.innerHTML = item;
-}).catch(function(error){
-    alert(error.message);
-});
-
 // Save Info To The LocalStorage 
 function addData(){
     let userName = document.getElementById("name").value;
@@ -67,9 +47,9 @@ function scrollToSections(elements){
         ele.addEventListener("click", (e) => {
             e.preventDefault();
             if(e.target.dataset.section ===".movies"){
-                location.replace("/movies.html");
+                window.location.href = "movies.html";
             }else if(e.target.dataset.section ===".header"){
-                location.replace("/home.html");
+                window.location.href = "index.html";
             }else{
             document.querySelector(e.target.dataset.section).scrollIntoView({
                 behavior: 'smooth'
@@ -106,7 +86,7 @@ function fixNav(){
 }
 
 // Handle active state
-let navbar = document.querySelector(".links").querySelectorAll("a");
+navbar = document.querySelector(".links").querySelectorAll("a");
 navbar.forEach(ele => {
     ele.addEventListener("click",function(){
         navbar.forEach(nav => nav.classList.remove("active"))
