@@ -1,3 +1,23 @@
+// Get The API And Handle It 
+const displayData = document.getElementById("displayData");
+let imageSrc = "https://image.tmdb.org/t/p/w500/";
+
+const request = fetch("https://api.themoviedb.org/3/trending/all/day?api_key=7d8600841d0744c2900bb53e135fa788").then(function(res){
+    return res.json();
+}).then(function(data){
+    let item = "";
+    for(let i=0 ; i < data.results.length ; i++ ){
+        item += `<div class="item col-lg-3 col-sm-6 my-4">
+                <img src="${imageSrc}${data.results[i].poster_path}" alt="">
+                <span>${data.results[i].vote_average}</span>
+                </div>
+            `;
+    }
+    displayData.innerHTML = item;
+}).catch(function(error){
+    alert(error.message);
+});
+
 // Save Info To The LocalStorage 
 function addData(){
     let userName = document.getElementById("name").value;
@@ -86,10 +106,12 @@ function fixNav(){
 }
 
 // Handle active state
-navbar = document.querySelector(".links").querySelectorAll("a");
+let navbar = document.querySelector(".links").querySelectorAll("a");
 navbar.forEach(ele => {
     ele.addEventListener("click",function(){
         navbar.forEach(nav => nav.classList.remove("active"))
         this.classList.add("active");
     })
 });
+
+

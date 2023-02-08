@@ -50,6 +50,7 @@ body{
 /* ---------- Start Login Page ---------- */
 .form{
     background-color: #0A2647;
+    width: 50% !important;
 }
 .form input:focus{
     background-color: #E94560;
@@ -68,6 +69,9 @@ img{
     color: #fff;
 }
 @media(max-width: 767px){
+    .form{
+        width: 80% !important;
+    }
     .form a{
         text-align: right;
     }
@@ -151,7 +155,7 @@ img{
     border-style: solid;
     border-color: transparent transparent #fff transparent;
     position: absolute;
-    bottom: 2px;
+    bottom: -9px;
     right: 10px;
 }
 .header .navbar .toggle-menu:focus{
@@ -174,14 +178,14 @@ img{
         position: absolute;
         left: 0;
         top: 65px;
-        text-align: right;
+        text-align: left;
         width: 100%;
         border-radius: 4px;
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         -ms-border-radius: 4px;
         -o-border-radius: 4px;
-}
+    }
     .header #navbarNav.open li{
         display: block;
         margin: 10px auto;
@@ -195,6 +199,30 @@ img{
     }
     .header .navbar .toggle-menu{
         display: inline-block;
+    }
+}
+@media(max-width: 480px){
+    .header .head-span{
+        padding-right: 0;
+    }
+    .header .navbar .toggle-menu{
+        width: 30px;
+    }
+    .header button{
+        margin-left: 0 !important;
+    }
+    .header .navbar .toggle-menu.menu-active::before{
+        bottom: -9px;
+        right: 5px;
+    }
+    .header #navbarNav.open{
+        padding-left: 0;
+    }
+    .header #navbarNav.open li{
+        margin: 10px auto;
+    }
+    .header #navbarNav.open li a{
+        font-weight: 600;
     }
 }
 .content{
@@ -293,6 +321,9 @@ img{
     background-position: center;
     background-repeat: no-repeat;
 }
+.statistics .statistic-items{
+    flex-direction: row;
+}
 .statistics .stats-item{
     cursor: pointer;
     border: 2px solid #E94560;
@@ -314,6 +345,19 @@ img{
 }
 .statistics .stats-item span{
     color: #fff;
+}
+@media(max-width: 767px){
+    .statistics .stats-item{
+        padding: 40px !important;
+    }
+}
+@media(max-width: 480px){
+    .statistics .statistic-items{
+        flex-direction: column;
+    }
+    .statistics .stats-item{
+        margin: 20px auto;
+    }
 }
 /* ---------- End Statistics Section ---------- */
 
@@ -416,7 +460,7 @@ img{
     border-style: solid;
     border-color: transparent transparent #fff transparent;
     position: absolute;
-    bottom: 2px;
+    bottom: -6px;
     right: 10px;
 }
 .navigation .navbar .toggle-menu:focus{
@@ -462,6 +506,21 @@ img{
     }
     .navigation .navbar .toggle-menu{
         display: inline-block;
+    }
+}
+@media(max-width: 480px){
+    .navigation .head-span{
+        padding-right: 0;
+    }
+    .navigation .navbar .toggle-menu{
+        width: 30px;
+    }
+    .navigation button{
+        margin-left: 0 !important;
+    }
+    .navigation .navbar .toggle-menu.menu-active::before{
+        bottom: -6px;
+        right: 5px;
     }
 }
 /* ---------- End Navigation Section ---------- */
