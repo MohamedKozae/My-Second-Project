@@ -46,20 +46,19 @@ function scrollToSections(elements){
     elements.forEach(ele => {
         ele.addEventListener("click", (e) => {
             e.preventDefault();
-            if(e.target.dataset.section ===".movies"){
-                window.location.href = "movies.html";
-            }else if(e.target.dataset.section ===".header"){
-                window.location.href = "index.html";
-            }else{
             document.querySelector(e.target.dataset.section).scrollIntoView({
                 behavior: 'smooth'
             });
             }
-        });
+        );
     });
 }
-
 scrollToSections(allLinks);
+
+ let homeLink = document.getElementById("home");
+ homeLink.addEventListener("click", function(){
+    location.assign("https://mohamedkozae.github.io/My-Second-Project/home.html")
+ });
 
 // Handle Up Span
 let span = document.querySelector(".up");

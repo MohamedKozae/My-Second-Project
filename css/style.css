@@ -288,6 +288,12 @@ img{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+@media(max-width: 480px){
+    .about .about-items{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
 /* ---------- End About Section ---------- */
 
 /* ---------- Start Categories Section ---------- */
@@ -521,6 +527,12 @@ img{
     .navigation .navbar .toggle-menu.menu-active::before{
         bottom: -6px;
         right: 5px;
+    }
+    .navigation #navbarNav.open{
+        padding-left: 0;
+    }
+    .navigation #navbarNav.open a{
+        font-weight: 600;
     }
 }
 /* ---------- End Navigation Section ---------- */

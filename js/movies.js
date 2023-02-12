@@ -41,25 +41,6 @@ function removeData(){
     document.getElementById("welcome").innerHTML = "Hi ";
 }
 
-// Select all links
-let allLinks = document.querySelectorAll(".links a");
-
-// Navbar Links Behavior
-function scrollToSections(elements){
-    elements.forEach(ele => {
-        ele.addEventListener("click", (e) => {
-            e.preventDefault();
-            if(e.target.dataset.section ===".movies"){
-                location.replace("/movies.html");
-            }else{
-                location.replace("/home.html");
-            }
-        });
-    });
-}
-
-scrollToSections(allLinks);
-
 // Handle Up Span
 let span = document.querySelector(".up");
 window.onscroll = function(){
@@ -83,3 +64,23 @@ function fixNav(){
         nav.classList.remove("active")
     }
 }
+
+// let movieLinks = document.querySelectorAll(".links a");
+// function movieLinksBehavior(elements){
+//     elements.forEach(ele => {
+//         ele.addEventListener("click", (e) => {
+//             if(e.target.dataset.section === "movie"){
+//                 location.assign("https://mohamedkozae.github.io/My-Second-Project/movie.html")
+//             } else {
+//                 location.assign("https://mohamedkozae.github.io/My-Second-Project/home.html")
+//             }
+//             }
+//         );
+//     });
+// }
+// movieLinksBehavior(movieLinks);
+
+let movieLink = document.getElementById("movie");
+movieLink.addEventListener("click", function(){
+    location.assign("https://mohamedkozae.github.io/My-Second-Project/movie.html")
+});
